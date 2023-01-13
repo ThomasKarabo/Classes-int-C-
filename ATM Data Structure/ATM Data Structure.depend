@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1665869093 source:c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\atm data structure\main.cpp
+	"ATM.h"
+	<stdlib.h>
+
+1665869783 source:c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\atm data structure\atm.cpp
+	"ATM.h"
+
+1665869309 c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\atm data structure\atm.h
+	<iostream>
+
