@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1663268211 source:c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\practicals\220044065_csc01b1_2022_p6\220044065_csc01b1_p6_2022\source\main.cpp
+	"Matrix2D.h"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1663269125 c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\practicals\220044065_csc01b1_2022_p6\220044065_csc01b1_p6_2022\source\matrix2d.h
+	<ostream>
+

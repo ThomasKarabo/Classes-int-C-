@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1663764786 source:c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\220044065_csc01b1_2022_p7\main.cpp
+	"GenericStorage2D.h"
+
+1663775945 c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\220044065_csc01b1_2022_p7\genericstorage2d.h
+	<iostream>
+	"GenericStorage2D.imp"
+
+1664117966 c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\220044065_csc01b1_2022_p7\genericstorage2d.imp
+	"GenericStorage2D.h"
+	<stdlib.h>
+

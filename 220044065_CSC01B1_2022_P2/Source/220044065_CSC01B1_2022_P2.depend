@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1659630720 source:c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\220044065_csc01b1_2022_p2\source\main.cpp
+	<iostream>
+	"Canvas2D.h"
+
+1665242731 c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\220044065_csc01b1_2022_p2\source\canvas2d.h
+	<iostream>
+	<sstream>
+	<cmath>
+	"CanvasCapper.h"
+
+1665242731 c:\users\karabo\desktop\computer science\csc01b1 - introduction to data structure development\tutorials\220044065_csc01b1_2022_p2\source\canvascapper.h
+	<iostream>
+	<string>
+	"Canvas2D.h"
+

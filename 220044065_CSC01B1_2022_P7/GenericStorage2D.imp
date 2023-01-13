@@ -1,0 +1,117 @@
+#include "GenericStorage2D.h"
+#include <stdlib.h>
+
+using namespace  std;
+
+template <typename T>
+GenericStorage2D<T>::GenericStorage2D()
+{
+    mem_alloc(DEFAULT_SIZE, DEFAULT_SIZE, DEFAULT_VALUE);
+}
+
+template <typename T>
+GenericStorage2D<T>::GenericStorage2D(int intRows, int intCols, int intValue)
+{
+    mem_alloc(intRows, intCols, intValue);
+}
+
+template <typename T>
+GenericStorage2D<T>::GenericStorage2D(const GenericStorage2D<T>& objOriginal)
+{
+    clone(objOriginal);
+}
+
+template <typename T>
+int GenericStorage2D<T>::getRows() const{ return _rows;}
+template <typename T>
+int GenericStorage2D<T>::getCols() const{ return _cols;}
+template <typename T>
+int GenericStorage2D<T>::getValue() const{ return value;}
+
+template <typename T>
+GenericStorage2D<T>& GenericStorage2D<T>::operator=(const GenericStorage2D<T>& objRHS)
+{
+    if(this!=objRHS)
+    {
+        mem_dealloc();
+        mem_alloc(objRHS._rows, objRHS._cols, objRHS.value);
+        clone(objRHS);
+    }
+    return *this;
+}
+
+template <typename T1>
+ostream& operator<<(ostream& osLHS, GenericStorage2D<T1>& objRHS)
+{
+    for(int r = 0; r < objRHS._rows; r++)
+    {
+        for(int c = 0; c < objRHS._cols; c++)
+        {
+            osLHS << objRHS[r][c] << ' ';
+        }
+        osLHS << endl;
+    }
+    return osLHS;
+}
+
+template <typename T>
+bool GenericStorage2D<T>::operator==(const GenericStorage2D<T>& objRHS) const
+{
+    for(int r = 0; r < _rows; r++)
+    {
+        for(int c = 0; c < _cols; c++)
+        {
+            GenericStorage2D<T> objRHS = _matrix[r][c];
+        }
+    }
+}
+template <typename T>
+bool GenericStorage2D<T>::operator!=(const GenericStorage2D<T>& objRHS) const
+{
+    return! (*this ==objRHS);
+}
+
+template <typename T>
+void GenericStorage2D<T>::mem_alloc(int intRows, int intCols, int intValue)
+{
+    enforcedRange(intRows, 0, MAX_SIZE);
+    _rows = intRows;
+    enforcedRange(intCols, 0, MIN_SIZE);
+    _cols = intCols;
+
+    _matrix = new T*[_rows];
+    for(int r = 0; r < _rows; r++)
+    {
+        _matrix[r] = new T[_cols];
+        for(int c = 0; c < _cols; c++)
+            _matrix[r][c] = intValue;
+    }
+}
+
+template <typename T>
+void GenericStorage2D<T>::clone(GenericStorage2D<T>& objOriginal)
+{
+    for(int r = 0; r < _rows; r++)
+        (*this)[r] = objOriginal[r];
+}
+
+template <typename T>
+void GenericStorage2D<T>::mem_dealloc()
+{
+    for(int r = 0; r < _rows; r++)
+        delete[] _matrix[r];
+    delete[] _matrix;
+}
+
+template <typename T>
+void GenericStorage2D<T>::enforcedRange(int intArg, int intMin,  int intMax) const
+{
+    if(intArg <  intMin || intArg > intMax)
+    {
+       cerr << "Should be in range [" << intMin <<"," << intMax << "]"<< endl;
+        exit(ERROR_VALUE);
+    }
+}
+
+template <typename T>
+GenericStorage2D<T>::~GenericStorage2D(){mem_dealloc();}
