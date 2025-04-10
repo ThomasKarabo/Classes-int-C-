@@ -8,7 +8,7 @@ using namespace std;
               << 255 << endl;
         for(int h = 0; h < h_rows; h++){
             for(int w = 0; w < w_cols; w++){
-                ssPGM << PGM_Pixel[h[[w] <<' ';
+                ssPGM << PGM_Pixel[h][w] <<' ';
             }
             ssPGM << endl;
         }
